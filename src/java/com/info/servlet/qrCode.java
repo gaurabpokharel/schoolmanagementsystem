@@ -37,7 +37,8 @@ public class qrCode extends HttpServlet {
             String ethnicity = request.getParameter("ethnicity");
 
             qrCodeGenerator obj = new qrCodeGenerator(studentname,fathername,mothername,address,grade,dob,gender,bloodgroup,contactnumber,nationality,religion,email,ethnicity);
-            RequestDispatcher rd = request.getRequestDispatcher("adminDashboard.jsp");
+            
+            RequestDispatcher rd = request.getRequestDispatcher("uploadQRCode.jsp");
             rd.forward(request, response);
             
             out.close();

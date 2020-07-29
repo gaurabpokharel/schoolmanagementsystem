@@ -30,7 +30,9 @@ public class qrCodeGenerator {
         
         ByteArrayOutputStream out=QRCode.from(details).to(ImageType.JPG).stream();
         
-        File f=new File("C:\\Users\\gaura\\OneDrive\\Documents\\NetBeansProjects\\Qr code\\qrcode.jpg");
+        File f=new File("C:\\Users\\gaura\\OneDrive\\Documents\\NetBeansProjects\\Qr code\\qrcode"
+                + studentname+grade
+                + ".jpg");
         FileOutputStream fos=new FileOutputStream(f);
         fos.write(out.toByteArray());
         fos.flush();

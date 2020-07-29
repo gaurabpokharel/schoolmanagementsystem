@@ -2,6 +2,7 @@ package com.info.dao;
 
 import com.info.bean.*;
 import com.info.servlet.*;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -144,7 +145,27 @@ public class addStudentDao {
         }
         return u;
     }
+public static int update(int id , InputStream file1) {
+        int status = 0;
+        try {
+            Connection con = addStudentDao.getConnection();
 
+            PreparedStatement st = con.prepareStatement("UPDATE student set qrcode=? where id=?");
+             if (file1 != null) {
+                // fetches input stream of the upload file for the blob column
+                st.setBlob(1, file1);
+            }
+            st.setInt(2, id);
+            status = st.executeUpdate();
+
+            st.close();
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return status;
+    }
     
     
 }

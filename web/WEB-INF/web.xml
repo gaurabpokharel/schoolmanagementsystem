@@ -12,6 +12,10 @@
         <servlet-name>qrCode</servlet-name>
         <servlet-class>com.info.servlet.qrCode</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>qrCodeUpdate</servlet-name>
+        <servlet-class>com.info.servlet.qrCodeUpdate</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>adminLogin</servlet-name>
         <url-pattern>/adminLogin</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>qrCode</servlet-name>
         <url-pattern>/qrCode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>qrCodeUpdate</servlet-name>
+        <url-pattern>/qrCodeUpdate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

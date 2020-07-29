@@ -20,6 +20,7 @@
                 String id = request.getParameter("id");
                 studentBean u = addStudentDao.getRecordById(Integer.parseInt(id));
             %>
+            ID:<input type="text" name="id" value="<%= u.getId() %>"<br><br>
              Student name:<input type="text" name="studentname" value="<%=u.getStudentname()%>"/><br><br>
         Father name:<input type="text" name="fathername" value="<%=u.getFathername()%>"/><br><br>
         Mother name:<input type="text" name="mothername" value="<%=u.getMothername()%>"/><br><br>
@@ -33,7 +34,7 @@
         Religion:<input type="text" name="religion" value="<%=u.getReligion()%>"/><br><br>
         Email:<input type="text" name="email" value="<%=u.getEmail()%>"/><br><br>
         Ethnicity:<input type="text" name="ethnicity" value="<%=u.getEthnicity()%>"/><br><br>
-        <input type="submit" value="Confirm">
+        <input type="submit" value="Generate QR Code">
            
        </form>
     </body>
